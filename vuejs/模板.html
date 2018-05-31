@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <title>模板</title>
+</head>
+<body>
+
+<div id="app">
+    <span v-once>这个将不会改变: {{ msg }}</span>
+    <button v-bind:disabled="isButtonDisabled">Button</button>
+    <a v-bind:href="url">{{url}}</a>
+</div>
+
+<script type="application/javascript">
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: 'bar',
+            isButtonDisabled:true,
+            url:"http://www.baidu.com"
+        }
+    });
+
+</script>
+
+</body>
+</html>

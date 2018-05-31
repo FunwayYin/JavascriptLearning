@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="example">
+    <div class="static" v-bind:class="classObject">
+        xxxxx
+    </div>
+    <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
+</div>
+
+<script type="application/javascript">
+
+    var vm = new Vue({
+        el: '#example',
+        data: {
+            active: true,
+            error: true,
+            classObject: {
+                'a': true,
+                'b': false,
+                'c': true,
+                'd': false
+            }
+        },
+        component:{
+            'my-component':{
+                template: '<p class="foo bar"> hello world ! </p>'
+            }
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

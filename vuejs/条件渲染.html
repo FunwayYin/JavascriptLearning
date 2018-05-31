@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条件渲染</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="example">
+
+        <div v-if="random">
+            Now you see me {{random}}
+        </div>
+        <div v-else>
+            Now you don't {{random}}
+        </div>
+
+        <div v-if="type === 'A'">
+            A
+        </div>
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else-if="type === 'C'">
+            C
+        </div>
+        <div v-else>
+            Not A/B/C
+        </div>
+
+        <ul>
+            <li v-for="(item, index) of items">
+                {{ index }} {{ item.message }}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="value in items">
+                {{ value.message }}
+            </li>
+        </ul>
+
+    </div>
+
+    <script type="application/javascript">
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                active: false,
+                type:"A",
+                items: [
+                    { message: 'Foo' },
+                    { message: 'Bar' },
+                    { message: 'Bar' },
+                    { message: 'Bar' }
+                ]
+            },
+            computed:{
+                random:function(){
+                    return Math.random() > 0.5;
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
