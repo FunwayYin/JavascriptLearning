@@ -30,4 +30,3 @@ console.log("First name: " + aPerson.first);
 console.log("Middle name: " + aPerson.middle);
 console.log("Last name: " + aPerson.last);
 console.log("Initials: " + aPerson.initials());
-console.log("Initials: " + aPerson.initials());
