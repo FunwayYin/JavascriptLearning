@@ -1,5 +1,5 @@
 var names = ["David","Cynthia","Raymond","Clayton","Jennifer"];
-putstr("Enter a name to search for: ");
+console.log("Enter a name to search for: ");
 var name = readline();
 var position = names.indexOf(name);
 if (position >= 0) {

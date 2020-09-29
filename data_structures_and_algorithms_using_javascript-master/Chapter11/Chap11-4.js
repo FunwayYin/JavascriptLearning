@@ -8,9 +8,9 @@ var vertex = 4;
 var paths = g.pathTo(vertex);
 while (paths.length > 0) {
    if (paths.length > 1) {
-      putstr(paths.pop() + '-');
+      console.log(paths.pop() + '-');
    }
    else {
-      putstr(paths.pop());
+      console.log(paths.pop());
    }
 }

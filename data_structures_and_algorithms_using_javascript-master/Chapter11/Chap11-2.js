@@ -24,12 +24,12 @@ function addEdge(v,w) {
 
 function showGraph() {
    for (var i = 0; i < this.vertices; ++i) {
-      putstr(i + " -> ");
+      console.log(i + " -> ");
       for (var j = 0; j
       
       < this.vertices; ++j) {
          if (this.adj[i][j] != undefined)
-            putstr(this.adj[i][j] + ' ');
+            console.log(this.adj[i][j] + ' ');
       }
       print();
    }

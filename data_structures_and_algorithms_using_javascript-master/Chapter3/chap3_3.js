@@ -6,9 +6,9 @@ for (var i = 0; i < movies.length; ++i) {
 }
 print("Available movies: \n");
 displayList(movieList);
-putstr("\nEnter your name: ");
+console.log("\nEnter your name: ");
 var name = readline();
-putstr("What movie would you like? ");
+console.log("What movie would you like? ");
 var movie = readline();
 checkOut(name, movie, movieList, customers);
 print("\nCustomer Rentals: \n");

@@ -4,7 +4,7 @@ for (var i = 0; i < 10; ++i) {
 }
 dispArr(nums);
 print();
-putstr("Enter a value to search for: ");
+console.log("Enter a value to search for: ");
 var val = parseInt(readline());
 if (seqSearch(nums, val)) {
    print("Found element: ");

@@ -5,7 +5,7 @@ for (var i = 0; i < 100; ++i) {
 insertionsort(nums);
 dispArr(nums);
 print();
-putstr("Enter a value to count: ");
+console.log("Enter a value to count: ");
 var val = parseInt(readline());
 var retVal = count(nums, val);
 print("Found " + retVal + " occurrences of " + val + ".");

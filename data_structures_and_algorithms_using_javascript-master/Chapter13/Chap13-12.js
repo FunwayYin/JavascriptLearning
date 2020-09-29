@@ -23,7 +23,7 @@ for (var i = 0; i < 100; ++i) {
 insertionsort(nums);
 dispArr(nums);
 print();
-putstr("Enter a value to search for: ");
+console.log("Enter a value to search for: ");
 var val = parseInt(readline());
 var retVal = binSearch(nums, val);
 if (retVal >= 0) {

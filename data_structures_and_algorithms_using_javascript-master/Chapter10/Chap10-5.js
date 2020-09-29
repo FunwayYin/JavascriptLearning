@@ -16,7 +16,7 @@ var cont = "y";
  
 
 while (cont == "y") {
-   putstr("\n\nEnter a grade: ");
+   console.log("\n\nEnter a grade: ");
    var g = parseInt(readline());
    var aGrade = gradedistro.find(g);
    if (aGrade == null) {
@@ -25,6 +25,6 @@ while (cont == "y") {
    else {
       print("Occurrences of " + g + ": " + aGrade.count);
    }
-   putstr("Look at another grade (y/n)? ");
+   console.log("Look at another grade (y/n)? ");
    cont = readline();
 }

@@ -2,7 +2,7 @@ var nums = [];
 for (var i = 0; i < 100; ++i) {
    nums[i] = Math.floor(Math.random() * 101);
 }
-putstr("Enter a number to search for: ");
+console.log("Enter a number to search for: ");
 var num = readline();
 print();
 var position = seqSearch(nums, num);

@@ -9,7 +9,7 @@ nums.insert(99);
 nums.insert(22);
 inOrder(nums.root);
 print("\n");
-putstr("Enter a value to search for: ");
+console.log("Enter a value to search for: ");
 var value = parseInt(readline());
 var found = nums.find(value);
 if (found != null) {

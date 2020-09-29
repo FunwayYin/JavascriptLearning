@@ -1,12 +1,12 @@
 function dispArr(arr) {
   for (var i = 0; i < arr.length; ++i) {
-     putstr(arr[i] + " ");
+     console.log(arr[i] + " ");
      if (i % 10 == 9) {
-        putstr("\n");
+        console.log("\n");
     }
   }
   if (i % 10 != 0) {
-     putstr("\n");
+     console.log("\n");
   }
 }
 
@@ -15,7 +15,7 @@ for (var i = 0; i < 100; ++i) {
    nums[i] = Math.floor(Math.random() * 101);
 }
 dispArr(nums);
-putstr("Enter a number to search for: ");
+console.log("Enter a number to search for: ");
 var num = parseInt(readline());
 print();
 if (seqSearch(nums, num)) {
