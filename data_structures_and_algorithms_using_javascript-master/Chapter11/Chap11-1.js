@@ -4,7 +4,6 @@ function Graph(v) {
    this.adj = [];
    for (var i = 0; i < this.vertices; ++i) {
       this.adj[i] = [];
-      this.adj[i].push("");
    }
    this.addEdge = addEdge;
    this.showGraph = showGraph;
