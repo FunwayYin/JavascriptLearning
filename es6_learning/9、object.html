@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object</title>
+</head>
+<body>
+
+<script type="application/javascript">
+
+    // 1   属性的简洁表示法
+
+    // ES6 允许直接写入变量和函数，作为对象的属性和方法。
+    // const foo = 'bar';
+    // const baz = {foo};
+    // console.log(foo,baz);
+
+    // function f(x, y) {
+    //     return {x, y};
+    // }
+    // console.log(f(1, 2));
+
+    // const o = {
+    //     method() {
+    //         return "Hello!";
+    //     }
+    // };
+    // console.log(o.method());
+
+    // let birth = '2000/01/01';
+    // const Person = {
+    //     name: '张三',
+    //     // 等同于birth: birth
+    //     birth,
+    //     // 等同于hello: function ()...
+    //     hello() {
+    //         console.log('我的名字是', this.name);
+    //     }
+    // };
+    // console.log(Person);
+
+    // function getPoint() {
+    //     const x = 1;
+    //     const y = 10;
+    //     return {x, y};
+    // };
+    // console.log(getPoint());
+
+    // const cart = {
+    //     _wheels: 4,
+    //     get wheels () {
+    //         return this._wheels;
+    //     },
+    //     set wheels (value) {
+    //         if (value < this._wheels) {
+    //             throw new Error('数值太小了！');
+    //         };
+    //         this._wheels = value;
+    //     }
+    // };
+    // cart.wheels = 5;
+    // console.log(cart);
+
+    // const obj = {
+    //     * m() {
+    //         yield 'hello world';
+    //     }
+    // }
+    // console.log(obj.m());
+
+    // 2   属性名表达式
+
+    // let obj={};
+    // obj.foo = true;
+    // obj['a' + 'bc'] = 123;
+    // console.log(obj);
+
+    // let propKey = 'foo';
+    // let obj = {
+    //     [propKey]: true,
+    //     ['a' + 'bc']: 123
+    // };
+    // console.log(obj);
+
+    // let lastWord = 'last word';
+    // const a = {
+    //     'first word': 'hello',
+    //     [lastWord]: 'world'
+    // };
+    // console.log(a['first word']);     // "hello"
+    // console.log(a[lastWord]);         // "world"
+    // console.log(a['last word']);      // "world"
+
+    // let obj = {
+    //     ['h' + 'ello']() {
+    //         return 'hi';
+    //     }
+    // };
+    // console.log(obj.hello());
+
+    // 注意，属性名表达式与简洁表示法，不能同时使用，会报错。
+    // 报错
+    // const foo = 'bar';
+    // const bar = 'abc';
+    // const baz = {[foo]};
+
+    // 正确
+    // const foo = 'bar';
+    // const baz = { [foo]: 'abc'};
+
+    // const keyA = {a: 1};
+    // const keyB = {b: 2};
+    // const myObject = {
+    //     [keyA]: 'valueA',
+    //     [keyB]: 'valueB'
+    // };
+    // console.log(keyA,keyB,myObject);
+    // [keyA]和[keyB]得到的都是[object Object]，所以[keyB]会把[keyA]覆盖掉，
+    // 而myObject最后只有一个[object Object]属性。
+
+    // 3   方法的 name 属性
+    // const person = {
+    //     sayName() {
+    //         console.log('hello!');
+    //     },
+    // };
+    // person.sayName.name); //'sayName'
+
+    // const obj = {
+    //     get foo() {},
+    //     set foo(x) {}
+    // };
+    // console.log(obj.foo.name);// TypeError: Cannot read property 'name' of undefined
+
+    // const descriptor = Object.getOwnPropertyDescriptor(obj, 'foo');
+    // console.log(descriptor.get.name); // "get foo"
+    // console.log(descriptor.set.name); // "set foo"
+
+    // (new Function()).name;
+    // var doSomething = function() {};
+    // console.log(doSomething.bind().name); //bound doSomething
+
+    // const key1 = Symbol('description');
+    // const key2 = Symbol();
+    // let obj = {
+    //     [key1]() {},
+    //     [key2]() {}
+    // };
+    // console.log(obj[key1].name); // "[description]"
+    // console.log(obj[key2].name); // ""
+
+    // 4   Object.is()
+    // console.log(Object.is('foo', 'foo'));   // true
+    // console.log(Object.is({}, {}));         // false
+
+    // 5   Object.assign()
+    // Object.assign方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）。
+    // Object.assign方法的第一个参数是目标对象，后面的参数都是源对象。
+    // const target  = { a: 1 };
+    // const source1 = { b: 2 };
+    // const source2 = { c: 3 };
+    // Object.assign(target, source1, source2);
+    // console.log(target)    // {a:1, b:2, c:3}
+
+    // 如果目标对象与源对象有同名属性，或多个源对象有同名属性，则后面的属性会覆盖前面的属性。
+    // const target = { a: 1, b: 1 };
+    // const source1 = { b: 2, c: 2 };
+    // const source2 = { c: 3 };
+    // Object.assign(target, source1, source2);
+    // console.log(target)    // {a:1, b:2, c:3}
+
+    // 如果只有一个参数，Object.assign会直接返回该参数。
+    // const obj = {a: 1};
+    // let res = Object.assign(obj) === obj   // true
+    // console.log(Object.assign(obj));       // {a:1}
+    // console.log(Object.assign(undefined));   // 报错
+    // console.log(Object.assign(null));         // 报错
+
+    // let obj = {a: 1};
+    // Object.assign(obj, undefined) === obj // true
+    // Object.assign(obj, null) === obj // true
+    // console.log(obj);
+
+    //但是，除了字符串会以数组形式，拷贝入目标对象，其他值都不会产生效果。
+    // const v1 = 'abc';
+    // const v2 = true;
+    // const v3 = 10;
+    // const obj = Object.assign({}, v1, v2, v3);
+    // console.log(obj);  // { "0": "a", "1": "b", "2": "c" }
+
+    // let obj = {a: 1};
+    // console.log(Object.assign(obj, undefined) === obj);  // true
+    // console.log(Object.assign(obj, null) === obj);       // true
+
+    // const obj1 = {a: {b: 1}};
+    // const obj2 = Object.assign({}, obj1);
+    // console.log(obj1.a.b = 2);  //2
+    // console.log(obj2.a.b);      //2
+    // 上面代码中，源对象obj1的a属性的值是一个对象，Object.assign拷贝得到的是这个对象的引用。
+    // 这个对象的任何变化，都会反映到目标对象上面。
+
+    // const target = { a: { b: 'c', d: 'e' } }
+    // const source = { a: { b: 'hello' } }
+    // Object.assign(target, source)
+    // console.log(target);
+
+    // let arr = Object.assign([1, 2, 3], [4, 5]);
+    // console.log(arr); // [4, 5, 3]
+
+    // const source = {
+    //     get foo() {
+    //         return 1
+    //     }
+    // };
+    // const target = {};
+    // Object.assign(target, source)
+    // console.log(target);
+    //上面代码中，source对象的foo属性是一个取值函数，Object.assign不会复制这个取值函数，只会拿到值以后，将这个值复制过去。
+
+    //常见用途
+    // class Point {
+    //     constructor(x, y) {
+    //         Object.assign(this, {x, y});
+    //     }
+    //     say(){
+    //        console.log(this.x + " " +this.y);
+    //     }
+    // }
+    // let p = new Point(12,16);
+    // p.say();
+
+    // 不过，采用这种方法克隆，只能克隆原始对象自身的值，不能克隆它继承的值
+    // function shallowClone(origin){
+    //     return Object.assign({}, origin);
+    // }
+    // 如果想要保持继承链，可以采用下面的代码。
+    // function deepClone(origin) {
+    //     let originProto = Object.getPrototypeOf(origin);
+    //     return Object.assign(Object.create(originProto), origin);
+    // }
+    // let a = {
+    //     a:1,
+    //     b:{
+    //         d:1
+    //     },
+    //     c:3
+    // };
+    // console.log(shallowClone(a));
+    // console.log(deepClone(a));
+
+    //为属性指定默认值
+    // const DEFAULTS = {
+    //     logLevel: 0,
+    //     outputFormat: 'html'
+    // };
+    // function processContent(options) {
+    //     options = Object.assign({}, DEFAULTS, options);
+    //     console.log(options);
+    // }
+    // processContent({
+    //     aaa:111,
+    //     bbb:222,
+    //     ccc:333,
+    //     logLevel: 12,
+    // });
+
+    // 6   属性的可枚举性和遍历
+
+    // Object.getOwnPropertyDescriptor(Object.prototype, 'toString').enumerable;          // false
+    // Object.getOwnPropertyDescriptor([], 'length').enumerable;                          // false
+    // Object.getOwnPropertyDescriptor(class {foo() {}}.prototype, 'foo').enumerable     // false  所有 Class 的原型的方法都是不可枚举的
+
+    // let a = {
+    //     a:1,
+    //     b:{
+    //         b1:1,
+    //         b2:2,
+    //         b3:3,
+    //         b4:4
+    //     },
+    //     c:function () {
+    //         return "c"
+    //     }
+    // };
+
+    //ES6 一共有 5 种方法可以遍历对象的属性。
+
+        //1、
+            // for (let key in a){
+            //     console.log(key);
+            // }
+
+        //2、
+            //let arrObj = Object.keys(a);
+            //console.log(arrObj);
+            //0:"a",1:"b",2:"c"
+
+        //3、
+            //let arrObj = Object.getOwnPropertyNames(a);
+            //console.log(arrObj);
+            //0:"a",1:"b",2:"c"
+
+        //4、Object.getOwnPropertySymbols返回一个数组，包含对象自身的所有 Symbol 属性的键名。
+            //let arrObj = Object.getOwnPropertySymbols(a);
+            //console.log(arrObj);
+
+        //5、Reflect.ownKeys(obj)
+            //let arrObj = Reflect.ownKeys(a);
+            //console.log(arrObj);
+            //0:"a",1:"b",2:"c"
+
+    // 7   Object.getOwnPropertyDescriptors()
+
+    const obj = {
+        foo: 123,
+        get bar() {
+            return 'abc'
+        }
+    };
+    console.log(Object.getOwnPropertyDescriptors(a));
+
+
+    // { foo:
+    //    { value: 123,
+    //      writable: true,
+    //      enumerable: true,
+    //      configurable: true },
+    //   bar:
+    //    { get: [Function: get bar],
+    //      set: undefined,
+    //      enumerable: true,
+    //      configurable: true } }
+
+    // 8   __proto__属性，Object.setPrototypeOf()，Object.getPrototypeOf()
+
+    // 9   super 关键字
+
+    // 10  Object.keys()，Object.values()，Object.entries()
+
+    // 11  对象的扩展运算符
+
+</script>
+</body>
+</html>

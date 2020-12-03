@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>number</title>
+</head>
+<body>
+
+number除了新增了一些方法外，没有什么特别的东西,所以暂时不用深究
+
+<script type="application/javascript">
+
+    // 1 二进制和八进制表示法
+
+    // 2 Number.isFinite(), Number.isNaN()
+        //Number.isFinite()用来检查一个数值是否为有限的（finite），即不是Infinity。
+        // Number.isFinite(15); // true
+        // Number.isFinite(0.8); // true
+        // Number.isFinite(NaN); // false
+        // Number.isFinite(Infinity); // false
+        // Number.isFinite(-Infinity); // false
+        // Number.isFinite('foo'); // false
+        // Number.isFinite('15'); // false
+        // Number.isFinite(true); // false
+        //注意，如果参数类型不是数值，Number.isFinite一律返回false。
+
+    // 3 Number.parseInt(), Number.parseFloat()
+
+    // 4 Number.isInteger()
+    // Number.isInteger(25)    // true
+    // Number.isInteger(25.0)  // true  JavaScript 内部，整数和浮点数采用的是同样的储存方法，所以 25 和 25.0 被视为同一个值。
+    // Number.isInteger(25.1)  // false
+
+    // 5 Number.EPSILON
+    //ES6 在Number对象上面，新增一个极小的常量Number.EPSILON。根据规格，它表示 1 与大于 1 的最小浮点数之间的差。
+
+    // 6 安全整数和 Number.isSafeInteger()
+
+    //0.1 + 0.2 - 0.3 = 5.551115123125783e-17 //false
+    //console.log(0.1 + 0.2 - 0.3 ==0 );
+
+    // 7 Math 对象的扩展
+    // Math.trunc(4.1) // 4
+    // Math.trunc(4.9) // 4
+    // Math.trunc(-4.1) // -4
+    // Math.trunc(-4.9) // -4
+    // Math.trunc(-0.1234) // -0
+
+
+    // Math.sign(-5) // -1
+    // Math.sign(5) // +1
+    // Math.sign(0) // +0
+    // Math.sign(-0) // -0
+    // Math.sign(NaN) // NaN
+
+    // Math.sign = Math.sign || function(x) {
+    //     x = +x;
+    //     if (x === 0 || isNaN(x)) {
+    //         return x;
+    //     }
+    //     return x > 0 ? 1 : -1;
+    // };
+
+    // 8 指数运算符
+
+</script>
+
+</body>
+</html>

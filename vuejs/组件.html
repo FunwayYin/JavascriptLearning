@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>组件基础</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="demo1">
+    <blog-post
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:title="post.title"
+            v-bind:id="post.id"
+    ></blog-post>
+</div>
+
+<script type="application/javascript">
+
+    Vue.component('blog-post', {
+        props: ['title','id','content'],
+        template: '<h3>{{ post.title }}</h3>\
+        <div v-html="post.content"></div>'
+    });
+
+    new Vue({
+        el: '#demo1',
+        data: {
+            posts: [
+                { id: 1, title: 'My journey with Vue ' ,content:"content"},
+                { id: 2, title: 'Blogging with Vue ',content:"content"},
+                { id: 3, title: 'Why Vue is so fun ',content:"content"}
+            ]
+        }
+    });
+
+</script>
+
