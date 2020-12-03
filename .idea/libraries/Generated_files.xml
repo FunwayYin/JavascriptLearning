@@ -1,0 +1,38 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/webpack_learnning/dist/bundle-compile.js" />
+        <item url="file://$PROJECT_DIR$/webpack_learnning/dist/css-compile.js" />
+        <item url="file://$PROJECT_DIR$/webpack_learnning/dist/js-compile.js" />
+        <item url="file://$PROJECT_DIR$/webpack_learnning/postcss.config-compile.js" />
+        <item url="file://$PROJECT_DIR$/webpack_learnning/src/js/index-compile.js" />
+        <item url="file://$PROJECT_DIR$/webpack_learnning/src/js/index2-compile.js" />
+        <item url="file://$PROJECT_DIR$/webpack_learnning/webpack.config-compile.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/main-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/src/js/bundle-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/js/bundle-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/js/entry-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/js/entry2-compile.js" />
+      <root url="file://$PROJECT_DIR$/dist/js/entry-compile.js" />
+      <root url="file://$PROJECT_DIR$/dist/js/entry2-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/js/bundle.entry-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/js/bundle.entry2-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/js/bundle.index-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/js/bundle.index2-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/[path]/css-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/[path]/js-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/bundle-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/css-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/dist/js-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/postcss.config-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/src/js/index-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/src/js/index2-compile.js" />
+      <root url="file://$PROJECT_DIR$/webpack_learnning/webpack.config-compile.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
